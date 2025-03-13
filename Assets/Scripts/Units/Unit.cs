@@ -9,7 +9,7 @@ public class Unit : MonoBehaviour
     private GridPosition gridPosition;
     //private HealthSystem healthSystem;
 
-    //private BaseAction[] baseActionArray;
+    private BaseAction[] baseActionArray;
     private int actionPoints = ACTION_POINTS_MAX;
 
     public static event EventHandler OnAnyActionPointsChanged;
@@ -20,7 +20,7 @@ public class Unit : MonoBehaviour
 
     private void Awake()
     {
-        //baseActionArray = GetComponents<BaseAction>();
+        baseActionArray = GetComponents<BaseAction>();
         //healthSystem = GetComponent<HealthSystem>();
     }
     // Start is called before the first frame update
@@ -58,7 +58,7 @@ public class Unit : MonoBehaviour
         } 
 
     }
-    /*public T GetAction<T>() where T : BaseAction
+    public T GetAction<T>() where T : BaseAction
     {
         foreach(BaseAction baseAction in baseActionArray)
         {
@@ -68,7 +68,7 @@ public class Unit : MonoBehaviour
             }
         }
         return null;
-    }*/
+    }
     public override string ToString()
     {
         return name;
@@ -79,10 +79,10 @@ public class Unit : MonoBehaviour
         return gridPosition;
     }
 
-    /*public BaseAction[] GetBaseActionArray()
+    public BaseAction[] GetBaseActionArray()
     {
         return baseActionArray;
-    }*/
+    }
 
     /*public bool TrySpendActionPoints(BaseAction baseAction)
     {
