@@ -72,6 +72,12 @@ public class GridVisualizer : MonoBehaviour
             case MoveAction moveAction:
                 gridVisualType = GridVisualType.White;
                 break;
+            case SideArcAction sideArcAction:
+                gridVisualType = GridVisualType.Red;
+                break;
+            case DirectArcAction directArcAction:
+                gridVisualType = GridVisualType.Blue;
+                break;
         }
         ShowGridPositionList(selectedAction.GetValidActionGridPositionList(), gridVisualType);
     }
