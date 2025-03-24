@@ -15,9 +15,9 @@ public class UnitActionController : MonoBehaviour
     private static UnitActionController instance;
     [SerializeField] private Unit selectedUnit;
     [SerializeField] private LayerMask unitLayerMask;
-    // Start is called before the first frame update
     private BaseAction selectedAction;
     private bool isBusy;
+    
     private void Awake() 
     {
         if (Instance != null)
@@ -120,5 +120,14 @@ public class UnitActionController : MonoBehaviour
         isBusy = false;
 
         OnBusyChanged?.Invoke(this, isBusy);
+    }
+
+    public Unit GetSelectedUnit(){
+        return selectedUnit;
+    }
+
+    public BaseAction GetSelectedAction()
+    {
+        return selectedAction;
     }
 }
